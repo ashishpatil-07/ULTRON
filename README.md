@@ -42,10 +42,10 @@ Our solution is an AI-powered Multi-Purpose ChatBot that automates LinkedIn post
 ## Setup and Installation
 
 ### Prerequisites
-- Python 3.7+
-- Google Generative AI API key
-- LinkedIn API access token
-- Node.js
+- Python ( Download from here: https://python.org/downloads/ )
+- Google Generative AI API key ( Get your Api key from here : https://aistudio.google.com/app/apikey )
+- LinkedIn API access token ( To get access token : https://towardsdatascience.com/linkedin-api-python-programmatically-publishing-d88a03f08ff1 )
+- Node.js ( Get from here: https://nodejs.org/en )
 
 ### Project Directories
 

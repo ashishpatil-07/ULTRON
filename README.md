@@ -6,7 +6,6 @@
 - [Features](#features)
 - [Technical Details](#technical-details)
 - [Key Achievements](#key-achievements)
-- [Conclusion](#conclusion)
 - [Setup and Installation](#setup-and-installation)
   - [Prerequisites](#prerequisites)
   - [Project Directories](#project-directories)
@@ -15,6 +14,7 @@
   - [Integration](#integrating-the-frontend-with-backend)
   - [Running the Application](#running-the-application)
   - [Usage](#usage)
+- [Conclusion](#conclusion)
 
 ## Problem Statement
 In today's digital world, professionals struggle with managing multiple tasks such as real-time conversation, updating social media, and extracting relevant information from websites. A solution is needed to streamline these tasks into one interface. The challenge we aim to solve is creating a CHATBOT that can efficiently perform all these tasks.
@@ -44,9 +44,6 @@ Our solution is an AI-powered Multi-Purpose ChatBot that automates LinkedIn post
 ## Key Achievements
 1. Successfully combined general conversational AI with task-specific functions, demonstrating versatility.
 2. Integration of FastAPI and ReactJS enabled smooth communication between the frontend and backend, providing a user-friendly interface.
-
-## Conclusion
-The project demonstrates a Multi-Purpose ChatBot that combines conversational AI with practical, task-oriented functionalities, showcasing a user-friendly chat interface and a flexible architecture for various use cases.
 
 ## Setup and Installation
 
@@ -161,5 +158,6 @@ app.add_middleware(
  2. Start a conversation with the ChatBot.
  3. Use the commands provided (e.g., web scraping, LinkedIn profile fetching).
 
-   
+## Conclusion
+The project demonstrates a Multi-Purpose ChatBot that combines conversational AI with practical, task-oriented functionalities, showcasing a user-friendly chat interface and a flexible architecture for various use cases.
 

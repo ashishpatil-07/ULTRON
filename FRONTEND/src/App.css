@@ -1,0 +1,430 @@
+/* Global Styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #acc8d5; 
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Chat Container */
+.chat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.toggle-switch {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #2f2f2f;
+  border-radius: 12px;
+  padding: 10px 12px;
+  border:none;
+  transition: background-color 0.3s;
+}
+
+.new-chat-button {
+  position: fixed;
+  top: 68px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #2f2f2f;
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: background-color 0.3s;
+  border:none;
+}
+
+/* Chat Window */
+.chat-window {
+  flex: 1;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 550px;
+  max-height: 700px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+}
+
+.logo {
+  width: 21%;
+  height: 100px;
+}
+
+.chat-title {
+  text-align: center; 
+  margin-top: -18px;
+  margin-bottom: -18px;
+}
+
+/* Message Container */
+.messages {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  overflow-y: auto;
+  flex: 1;
+  background-color: #dfdede;
+  height: auto;
+}
+
+/* Message Styles */
+.message {
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 80%;
+  word-wrap: break-word;
+  height: auto;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+/* User and Bot Message Styles */
+.user-message,
+.bot-response {
+  padding: 12px 15px;
+  border-radius: 20px;
+  word-wrap: break-word;
+  margin-bottom: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+}
+
+/* User Message Styles */
+.user-message {
+  background-color: #1877F2;
+  color: #FFFFFF;
+  align-self: flex-end;
+  min-width: 5%;
+  max-width: 75%;
+  text-align: left;
+  margin-right: -4px;
+  padding-right: 10px;
+  margin-left: 5px;
+  font-weight: bold;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 16px;
+}
+
+/* Loading Indicator */
+.loading-indicator {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+.loading-indicator::after {
+  content: '';
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  border: 3px solid rgba(255, 255, 255, 0.975);
+  border-top-color: #0099ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Bot Response Styles */
+.bot-response {
+  background-color: #833AB4;
+  color: #FFFFFF;
+  align-self: flex-start;
+  min-width: 15%;
+  max-width: 75%;
+  text-align: left;
+  font-weight: bold;
+  margin-left: -2px;
+}
+
+/* Animation for Messages */
+.user-message,
+.bot-response {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Speak and Copy Button Styles */
+.speak-button,
+.copy-button {
+  background-color: #ffffff;
+  color: rgb(18, 10, 10);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(216, 214, 214, 0.3);
+  transition: background-color 0.3s;
+}
+
+/* Button Hover Effects */
+.speak-button:hover,
+.copy-button:hover{
+  background-color: #000000;
+  transform: scale(1.10);
+}
+
+/* Input Area Styles */
+.input-area {
+  display: flex;
+  font-family:Arial, Helvetica, sans-serif;
+  padding: 5px;
+  margin-top: 5px;
+  margin-left: 2px;
+}
+
+/* Input Field Styles */
+.input-field {
+  flex: auto;
+  padding: 8px;
+  margin-left: 3px; 
+  margin-right: 7px;
+  font-family:Arial, Helvetica, sans-serif;
+  display: flex;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 13px;
+  border: 0.5px solid #b9b9b9; 
+  background-color: #f5f5f5; 
+  color: #333; 
+}
+
+.input-field:focus {
+  border-color: #25D366; 
+  box-shadow: 0 0 5px rgba(37, 211, 102, 0.3);
+}
+
+/* Send Button Styles */
+.send-button{
+  background-color: #25D366; 
+  border-radius: 50%; 
+  padding: 15px;
+  margin-left: 2px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 5px;
+}
+
+/* Mic Button Styles */
+.mic-button {
+  background-color: #fffffe; 
+  padding: 12px;
+  border-radius: 50%;
+  margin-left: 3px;
+  margin-right: 3px;
+  cursor: pointer;
+  margin-left: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrape and LinkedIn Area */
+.scrape-area,
+.linkedin-area {
+  display: flex;
+  align-items: center;
+  margin: 4px;
+  padding: 1px;
+}
+
+/* Scrape Area Input Styles */
+.scrape-area input {
+  flex: auto;
+  padding: 14px;
+  margin-bottom: 5px;
+  margin-left: 4px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-right: 2px;
+  border-radius: 13px;
+  border: 0.5px solid #b9b9b9;
+  background-color: #f5f5f5; 
+  color: #333; 
+}
+
+/* Scrape Area Button Styles */
+.scrape-area button {
+  padding: 14px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 7px;
+  transition: background-color 0.3s;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-left: 20px;
+  font-size: 14px;
+  display: flex;
+  background-color: #25D366; 
+}
+
+/* LinkedIn Area Textarea Styles */
+.linkedin-area textarea {
+  flex: auto;
+  padding: 12px;
+  width: 100%;
+  margin-left: 5px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  border-radius: 13px;
+  display: flex;
+  border: 0.5px solid #b9b9b9; 
+  background-color: #f5f5f5; 
+  color: #333;
+}
+
+/* LinkedIn Area Send Button Styles */
+.linkedin-area .send-button {
+  padding: 10px;
+  color: white;
+  margin-left: 9px;
+  margin-right: 8px;
+  display: flex;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  border-radius: 15px;
+  background-color: #25D366; 
+}
+
+/* LinkedIn Area Camera Button Styles */
+.linkedin-area .camera-button {
+  display: flex;
+  align-items: center;
+  font-size: 15px; 
+  padding: 10px;
+  margin-left: 7px; 
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  color: #000000; 
+  border: 0.5px solid #b9b9b9; 
+}
+
+.toggle-switch:hover,
+.new-chat-button:hover,
+.send-button:hover,
+.mic-button:hover,
+.scrape-area button:hover,
+.linkedin-area button:hover,
+.camera-button:hover{
+  background-color: #00060a;
+  transform: scale(1.05);
+}
+
+
+/*    DARK MODE   */
+.dark-mode .toggle-switch,.new-chat-button{
+  border: 0.07px solid #ffffff;
+}
+
+.dark-mode .chat-title {
+  color: #ffffff; 
+}
+
+.dark-mode .chat-container {
+  background-color: #1e1e1e; 
+}
+
+.dark-mode .chat-window{
+  background-color: #4d4d4d ;
+}
+
+.dark-mode .messages{
+  border:1px solid #acacac;
+  border-radius: 5px;
+  background:linear-gradient(135deg, #8a8a87, #3d3d3d) ;
+}
+
+.dark-mode .scrape-area input,
+.dark-mode .input-field,
+.dark-mode .linkedin-area textarea {
+  background-color: #2c2c2c;
+  color: #f0f0f0; 
+  border-color: #525357; 
+}
+
+.dark-mode .send-button,
+.dark-mode .scrape-area button,
+.dark-mode .linkedin-area button {
+  background-color: #0a0a0a; 
+  color: #ffffff;
+}
+
+.dark-mode .speak-button,
+.dark-mode .copy-button,
+.dark-mode .mic-button {
+  background-color: #2e2e2e;
+  color: #f0f0f0; 
+}
+
+.dark-mode .camera-button {
+  background-color: #717171; 
+  color: #f0f0f0; }
+.dark-mode .chat-window,
+.dark-mode .message,
+.dark-mode .input-area {
+  border-color: #3b3b3b; 
+}
+
+body.dark-mode .user-message {
+  background-color: #1B74E4; 
+  color: #FFFFFF;
+}
+
+body.dark-mode .bot-response {
+  background-color: #7123b9;
+  color: #FFFFFF; 
+}
+
+.dark-mode .speak-button:hover,
+.dark-mode .copy-button:hover,
+.dark-mode .mic-button:hover,
+.dark-mode .send-button:hover,
+.dark-mode .scrape-area button:hover,
+.dark-mode .linkedin-area button:hover,
+.dark-mode .camera-button:hover {
+  background-color: #c5c5c5; 
+}
+
+

@@ -5,7 +5,6 @@
 - [Solution](#solution)
 - [Features](#features)
 - [Technical Details](#technical-details)
-- [Key Achievements](#key-achievements)
 - [Setup and Installation](#setup-and-installation)
   - [Prerequisites](#prerequisites)
   - [Project Directories](#project-directories)
@@ -13,7 +12,6 @@
   - [Frontend Setup](#frontend-setup)
   - [Integration](#integrating-the-frontend-with-backend)
   - [Running the Application](#running-the-application)
-  - [Usage](#usage)
 - [Conclusion](#conclusion)
 
 ## Problem Statement
@@ -40,10 +38,6 @@ Our solution is an AI-powered Multi-Purpose ChatBot that automates LinkedIn post
 - **HTML/CSS:** For structure and styling.
 - **Fetch API:** For handling API requests.
 - **Web Speech API:** For voice recognition and text-to-speech functionality.
-
-## Key Achievements
-1. Successfully combined general conversational AI with task-specific functions, demonstrating versatility.
-2. Integration of FastAPI and ReactJS enabled smooth communication between the frontend and backend, providing a user-friendly interface.
 
 ## Setup and Installation
 
@@ -152,12 +146,7 @@ app.add_middleware(
  1. Make sure the backend server is running at http://127.0.0.1:8000.
  2. Start the frontend server at http://localhost:3000.
  3. Open a web browser and go to http://localhost:3000 to use the Multi-Purpose ChatBot.
-
-### Usage: 
- 1. Visit the frontend URL http://localhost:3000 in your browser.
- 2. Start a conversation with the ChatBot.
- 3. Use the commands provided (e.g., web scraping, LinkedIn profile fetching).
-
+   
 ## Conclusion
 The project demonstrates a Multi-Purpose ChatBot that combines conversational AI with practical, task-oriented functionalities, showcasing a user-friendly chat interface and a flexible architecture for various use cases.
 

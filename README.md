@@ -14,7 +14,7 @@
   - [Frontend Setup](#frontend-setup)
   - [Integration](#integrating-the-frontend-with-backend)
   - [Running the Application](#running-the-application)
-- [Usage](#usage)
+  - [Usage](#usage)
 
 ## Problem Statement
 In today's digital world, professionals struggle with managing multiple tasks such as real-time conversation, updating social media, and extracting relevant information from websites. A solution is needed to streamline these tasks into one interface. The challenge we aim to solve is creating a CHATBOT that can efficiently perform all these tasks.
@@ -84,73 +84,79 @@ The project demonstrates a Multi-Purpose ChatBot that combines conversational AI
     │
     └── README.md
 
-**Backend Setup**
 
+### Backend Setup
 1. Navigate to the backend directory:
-   
-       cd backend
-   
-3. Create a file as requirements.txt and add the following things:
-   
-       fastapi
-       requests
-       python-dotenv
-       bs4
-       pydantic
-       uvicorn
-       aiofiles
-       google.generativeai
+    ```bash
+    cd backend
+    ```
 
-4. Install required Python packages:
-   
-       pip install -r requirements.txt  
+2. Create a `requirements.txt` file and add the necessary packages:
+    ```text
+    fastapi
+    requests
+    python-dotenv
+    bs4
+    pydantic
+    uvicorn
+    aiofiles
+    google.generativeai
+    ```
 
-5. Create a `.env` file in the backend directory with your API keys:
+3. Install required Python packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-   
-       GEMINI_API_KEY=your_gemini_api_key_here  # Gemini API key
-       LINKEDIN_ACCESS_TOKEN=your_linkedin_access_token_here # LinkedIn API access token
-       LINKEDIN_PROFILE_ID_URN=your_linkedin_profile_id_urn_here  # LinkedIn Profile ID URN
-   
-6. Start the FastAPI server:
-   
-        uvicorn main:app --reload
+4. Create a `.env` file with your API keys:
+    ```text
+    GEMINI_API_KEY=your_gemini_api_key_here
+    LINKEDIN_ACCESS_TOKEN=your_linkedin_access_token_here
+    LINKEDIN_PROFILE_ID_URN=your_linkedin_profile_id_urn_here
+    ```
 
-The backend API will be available at `http://localhost:8000`.
+5. Start the FastAPI server:
+    ```bash
+    uvicorn main:app --reload
+    ```
+   The backend API will be available at `http://localhost:8000`.
 
-**Frontend Setup**
-1. Open Terminal and navigate to multipurpose chatbot folder and write this:
-   
-        npx create-react-app FRONTEND
-   
-   => this will create the frontend folder in the Chatbot folder and install necessary libraries
+### Frontend Setup
+1. Open Terminal and navigate to the project folder, then create the frontend:
+    ```bash
+    npx create-react-app FRONTEND
+    ```
+
 2. Navigate to the frontend folder:
-   
-         cd ../FRONTEND
-3.  Execute this command :
-   
-         npm start
-    
-   this runs the app in the development mode. Opens http://localhost:3000
+    ```bash
+    cd FRONTEND
+    ```
 
-**To integrate the FRONTEND with BACKEND do following steps:**
- Enable CORS (Cross-Origin Resource Sharing) in FastAPI:  in main.py make sure to implement this (already implemented in the code and uploaded visit main.py in BACKEND folder)
- 
-         from fastapi.middleware.cors import CORSMiddleware 
-         app.add_middleware(
-              CORSMiddleware,
-              allow_origins=["http://localhost:3000"],  # Frontend URL
-              allow_credentials=True,
-              allow_methods=["*"],
-              allow_headers=["*"],
-          )
-   
-**Running the Application :**
+3. Start the frontend:
+    ```bash
+    npm start
+    ```
+   This runs the app in development mode and opens it at `http://localhost:3000`.
+
+### Integrating the Frontend with Backend
+Ensure CORS is enabled in `main.py`:
+```python
+from fastapi.middleware.cors import CORSMiddleware 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+```
+### Running the Application
  1. Make sure the backend server is running at http://127.0.0.1:8000.
  2. Start the frontend server at http://localhost:3000.
  3. Open a web browser and go to http://localhost:3000 to use the Multi-Purpose ChatBot.
 
-**Usage :**
+### Usage: 
  1. Visit the frontend URL http://localhost:3000 in your browser.
  2. Start a conversation with the ChatBot.
  3. Use the commands provided (e.g., web scraping, LinkedIn profile fetching).

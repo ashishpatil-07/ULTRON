@@ -7,8 +7,8 @@ In today's digital world, professionals often struggle with managing multiple ta
 **Solution:**
 "Our solution is an AI-powered Multi-Purpose ChatBot that automates LinkedIn posting, performs web scraping for quick information access, and engages in conversational task management."
  The ChatBot is equipped to execute specific tasks that extend beyond general conversation:
-   1.  Update a Post on LinkedIn: The ChatBot should be capable of interfacing with LinkedIn to post updates or articles about specified topics, using provided API        access.
-   2.  Web Scrape a Website and Search for Occurrences of a Text: The bot should perform web scraping activities to search websites for specific text or patterns,         providing the results back to the user in a concise format.
+   1.  Update a Post on LinkedIn: The ChatBot should be capable of interfacing with LinkedIn to post updates or articles about specified topics, using provided API access.
+   2.  Web Scrape a Website and Search for Occurrences of a Text: The bot will perform web scraping activities to search websites for specific text, providing the results back to the user in a concise format.
 
 **Features :**
   1. Conversational Interface: Users can interact with the chatbot using text input.
@@ -38,27 +38,105 @@ The project demonstrated the Multi-Purpose ChatBot that combines conversational 
 
 ## Setup and Installation
 
-### Prerequisites
+**Prerequisites**
 - Python 3.7+ (for FastAPI backend)
 - Google Generative AI API key
 - LinkedIn API access token
+- Node.js
 
-### Backend Setup
+**PROJECT DIRECTORIES**
+
+
+    multi-purpose-chatbot/
+    │
+    ├── BACKEND/
+    │   ├── main.py
+    │   ├── linkedin.py
+    │   ├── web_scraper.py
+    │   ├── .env
+    │   ├── requirements.txt
+    │   └── ...
+    |
+    ├── FRONTEND/
+    │   ├── public/
+    │   ├── src/
+    │   │   ├── App.js
+    │   │   ├── App.css
+    │   │   ├── chatbot-logo.png
+    │   │   └── ...
+    │   ├── .gitignore
+    │   ├── package-lock.json
+    │   └── package.json
+    │
+    └── README.md
+
+**Backend Setup**
 
 1. Navigate to the backend directory:
-     cd backend
+   cd backend
    
-2. Create a virtual environment and activate it:
-     python -m venv venv
-     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+2. Create a file as requirements.txt and add the following things:
+   
+       fastapi
+       requests
+       python-dotenv
+       bs4
+       pydantic
+       uvicorn
+       aiofiles
+       google.generativeai
 
 3. Install required Python packages:
-     pip install fastapi uvicorn python-dotenv google-generativeai
+   
+       pip install -r requirements.txt  
 
-5. Create a `.env` file in the backend directory with your API keys:
+4. Create a `.env` file in the backend directory with your API keys:
+
    
+       GEMINI_API_KEY=your_gemini_api_key_here  # Gemini API key
+       LINKEDIN_ACCESS_TOKEN=your_linkedin_access_token_here # LinkedIn API access token
+       LINKEDIN_PROFILE_ID_URN=your_linkedin_profile_id_urn_here  # LinkedIn Profile ID URN
    
-6. Start the FastAPI server:
-     uvicorn main:app --reload
+5. Start the FastAPI server:
+   
+        uvicorn main:app --reload
 
 The backend API will be available at `http://localhost:8000`.
+
+**Frontend Setup**
+1. Open Terminal and navigate to multipurpose chatbot folder and write this:
+   npx create-react-app FRONTEND
+   => this will create the frontend folder in the Chatbot folder and install necessary libraries
+2. Navigate to the frontend folder:
+   
+         cd ../FRONTEND
+3.  Execute this command :
+   
+         npm start
+    
+   this runs the app in the development mode. Opens http://localhost:3000
+
+**To integrate the FRONTEND with BACKEND do following steps:**
+ Enable CORS (Cross-Origin Resource Sharing) in FastAPI:  in main.py make sure to implement this (already implemented in the code and uploaded visit main.py in BACKEND folder)
+ 
+         from fastapi.middleware.cors import CORSMiddleware 
+         app.add_middleware(
+              CORSMiddleware,
+              allow_origins=["http://localhost:3000"],  # Frontend URL
+              allow_credentials=True,
+              allow_methods=["*"],
+              allow_headers=["*"],
+          )
+   
+**Running the Application :**
+ 1. Make sure the backend server is running at http://127.0.0.1:8000.
+ 2. Start the frontend server at http://localhost:3000.
+ 3. Open a web browser and go to http://localhost:3000 to use the Multi-Purpose ChatBot.
+
+**Usage :**
+ 1. Visit the frontend URL http://localhost:3000 in your browser.
+ 2. Start a conversation with the ChatBot.
+ 3. Use the commands provided (e.g., web scraping, LinkedIn profile fetching).
+
+   
+
